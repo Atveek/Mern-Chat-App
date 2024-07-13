@@ -9,9 +9,11 @@ import { toast } from "sonner";
 import { apiClient } from "@/lib/api-client";
 import { LOGIN_ROUTE, SIGNUP_ROUTE } from "@/utils/constants";
 import { useNavigate } from "react-router-dom";
+import { useAppStore } from "@/store";
 
 function Auth() {
   const navigate = useNavigate();
+  const { setUserInfo } = useAppStore();
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [confirmPassword, setconfirmPassword] = useState("");
@@ -53,6 +55,7 @@ function Auth() {
       );
       console.log(response);
       if (response.data.user.id) {
+        setUserInfo(response.data.user);
         if (response.data.user.profileSetup) {
           navigate("/chat");
         } else {
@@ -70,6 +73,7 @@ function Auth() {
       );
       console.log(response);
       if (response.status === 201) {
+        setUserInfo(response.data.user);
         navigate("/profile");
       }
     }
