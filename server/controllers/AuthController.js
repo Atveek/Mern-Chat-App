@@ -47,9 +47,11 @@ export const login = async (req, res, next) => {
       return res.status(400).send("User with given email not found");
     }
     const auth = await compare(password, user.password);
+    console.log(auth);
     if (!auth) {
       return res.status(400).send("Password is incorrect");
     }
+
     res.cookie("jwt", createToken(email, user.id), {
       maxAge,
       secure: true,
@@ -160,6 +162,17 @@ export const removeProfileImage = async (req, res) => {
     return res.status(500).send("Internal server Error");
   }
 };
+
+export const logout = async (req, res) => {
+  try {
+    res.cookie("jwt", "", { maxAge: 1, secure: true, sameSite: "None" });
+    return res.status(200).send("Logout  successfully");
+  } catch (err) {
+    console.log({ err });
+    return res.status(500).send("Internal server Error");
+  }
+};
+
 export const addProfileImage = async (req, res) => {
   try {
     if (!req.file) {
