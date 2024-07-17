@@ -2,7 +2,6 @@ import jwt from "jsonwebtoken";
 
 export const verifyToken = async (req, res, next) => {
   const token = req.cookies.jwt;
-  console.log(token, "token");
   if (!token) {
     return res.status(401).send("You are not authenticated");
   }
@@ -14,6 +13,5 @@ export const verifyToken = async (req, res, next) => {
       req.userId = payload.userId;
     }
   );
-  console.log("middleware");
   next();
 };

@@ -11,3 +11,6 @@ export const LOGOUT_ROUTE = `${AUTH_ROUTES}/logout`;
 
 export const CONTACT_ROUTE = "api/contact";
 export const SEARCH_CONTACT_ROUTE = `${CONTACT_ROUTE}/search`;
+
+export const MESSAGES_ROUTE = "api/messages";
+export const GET_MESSAGES_ROUTE = `${MESSAGES_ROUTE}/get-message`;
