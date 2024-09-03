@@ -14,7 +14,7 @@ function EmptyChatContainer() {
         {" "}
         <h3 className="poppins-medium">
           Hi <span className="text-purple-500 ">!</span>Welcome to
-          <span className="text-purple-500"> QuickChat </span> App
+          <span className="text-purple-500"> Chatter Space </span> App
           <span className="text-purple-500">.</span>
         </h3>
       </div>

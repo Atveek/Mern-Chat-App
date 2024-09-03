@@ -2,12 +2,22 @@ import React, { useEffect } from "react";
 import ProfileInfo from "./components/profile-info";
 import NewDm from "./components/new-dm";
 import { apiClient } from "@/lib/api-client";
-import { GET_DM_CONTACT_ROUTE } from "@/utils/constants";
+import {
+  GET_DM_CONTACT_ROUTE,
+  GET_USER_CHANNELS_ROUTE,
+} from "@/utils/constants";
 import { useAppStore } from "@/store";
 import ContactList from "@/components/contact-list";
+import CreateChannel from "./components/create-channel";
 
 function ContactsContainer() {
-  const { directMessagesContacts, setDirectMessagesContacts } = useAppStore();
+  const {
+    directMessagesContacts,
+    setDirectMessagesContacts,
+    channels,
+    setChannels,
+  } = useAppStore();
+
   useEffect(() => {
     const getContacts = async () => {
       const res = await apiClient.get(GET_DM_CONTACT_ROUTE, {
@@ -17,8 +27,18 @@ function ContactsContainer() {
         setDirectMessagesContacts(res.data.contacts);
       }
     };
+    const getChannels = async () => {
+      const res = await apiClient.get(GET_USER_CHANNELS_ROUTE, {
+        withCredentials: true,
+      });
+      if (res.data.channels) {
+        setChannels(res.data.channels);
+      }
+    };
     getContacts();
-  }, [setDirectMessagesContacts]);
+    getChannels();
+  }, [setDirectMessagesContacts, setChannels]);
+
   return (
     <div className="relative md:w-[35vw] lg:w-[20vw] bg-[#1b1c24] border-r-2 border-[#2f303b] w-full">
       <div className="p-3">
@@ -36,6 +56,10 @@ function ContactsContainer() {
       <div className="my-5">
         <div className="flex items-center justify-between pr-10">
           <Title text={"Channels"}></Title>
+          <CreateChannel />
+        </div>
+        <div className="max-h-[38vh] overflow-y-auto scrollbar-hidden">
+          <ContactList contacts={channels} isChannel={true} />
         </div>
       </div>
       <ProfileInfo />
@@ -73,11 +97,12 @@ export const Logo = () => {
           fill="#a16ee8"
         ></path>{" "}
       </svg>
-      <span className="text-3xl font-semibold ">QuickChat</span>
+      <span className="text-2xl font-semibold ">Chatter Space</span>
     </div>
   );
 };
 
+// eslint-disable-next-line react/prop-types
 const Title = ({ text }) => {
   return (
     <h6 className="uppercase tracking-widest text-neutral-400 font-light pl-10 text-opacity-90 text-sm">
