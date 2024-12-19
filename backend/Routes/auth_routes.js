@@ -13,6 +13,7 @@ const {
 
 const upload = multer();
 
+
 router.post("/register", upload.single("profilePic"), register);
 router.post("/login", login);
 router.get("/login", authUser);

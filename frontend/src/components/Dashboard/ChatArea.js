@@ -599,7 +599,7 @@ export const ChatArea = () => {
             textAlign={"center"}
           >
             <Text fontSize={"6vw"} fontWeight={"bold"} fontFamily={"Work sans"}>
-              Conversa
+              Chatter-Space
             </Text>
             <Text fontSize={"2vw"}>Online chatting app</Text>
             <Text fontSize={"md"}>Select a chat to start messaging</Text>

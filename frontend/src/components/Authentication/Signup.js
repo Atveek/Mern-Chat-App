@@ -78,17 +78,26 @@ const Signup = (props) => {
       showtoast("Passwords do not match");
       return;
     } else {
-      const formData = new FormData();
-      formData.append("profilePic", profilePic);
-      formData.append("email", email);
-      formData.append("name", name);
-      formData.append("phoneNum", phoneNum);
-      formData.append("password", password);
-
+      const formData = {
+        profilePic: profilePic,
+        name: name,
+        email: email,
+        password: password,
+        phoneNum: phoneNum,
+      };
+      console.log(formData);
       toast.promise(
         fetch(`${context.ipadd}/user/register`, {
           method: "POST",
-          body: formData,
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            password: formData.password,
+            phoneNum: formData.phoneNum,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
         })
           .then((response) => {
             if (response.status !== 200) {

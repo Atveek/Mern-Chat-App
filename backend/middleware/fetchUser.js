@@ -4,7 +4,7 @@ env.config({
   path: "../../.env",
 });
 
-const JWT_SECRET = process.env.JWT_SECRET;
+const JWT_SECRET = process.env.SECRET_KEY;
 
 const fetchuser = (req, res, next) => {
   const token = req.header("auth-token");

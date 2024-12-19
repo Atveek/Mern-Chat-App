@@ -9,7 +9,7 @@ const imageupload = require("../config/imageupload.js");
 const nodemailer = require("nodemailer");
 const dotenv = require("dotenv");
 dotenv.config({ path: "./.env" });
-const JWT_SECRET = process.env.JWT_SECRET;
+const JWT_SECRET = process.env.SECRET_KEY;
 
 let mailTransporter = nodemailer.createTransport({
   service: "gmail",
@@ -30,6 +30,7 @@ const register = async (req, res) => {
     console.log("register request received");
 
     const { name, email, password, phoneNum } = req.body;
+    console.log({ name, email, password, phoneNum });
     if (!name || !email || !password || !phoneNum) {
       return res.status(400).json({
         error: "Please fill all the fields",

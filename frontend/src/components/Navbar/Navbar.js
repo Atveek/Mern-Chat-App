@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Box, Button, Flex, Text, Link, useDisclosure } from "@chakra-ui/react";
-import { FaGithub, FaMoon, FaSun } from "react-icons/fa";
+import { FaMoon, FaSun } from "react-icons/fa";
 import ProfileMenu from "./ProfileMenu";
 
 const Navbar = (props) => {
@@ -47,17 +47,6 @@ const Navbar = (props) => {
             {icon}
           </Button>
           {/* Github link */}
-          <Link
-            p={3}
-            borderRadius={"full"}
-            borderWidth={1}
-            fontSize={"small"}
-            backgroundColor={"transparent"}
-            href="https://github.com/pankil-soni"
-            mx={1}
-          >
-            <FaGithub />
-          </Link>
         </Box>
       )}
 
@@ -72,7 +61,7 @@ const Navbar = (props) => {
       >
         <Flex justify={"space-between"}>
           {/* Logo */}
-          <Text fontSize="2xl">Conversa</Text>
+          <Text fontSize="2xl">Chatter-Space</Text>
 
           <Box
             display={{ base: "none", md: "block" }}
@@ -92,19 +81,6 @@ const Navbar = (props) => {
               {icon}
             </Button>
             {/* Github link */}
-            <Button
-              borderRadius={"full"}
-              borderWidth={1}
-              fontSize={"small"}
-              backgroundColor={"transparent"}
-              p={3}
-              mr={2}
-              onClick={() => {
-                window.open("https://github.com/pankil-soni");
-              }}
-            >
-              <FaGithub />
-            </Button>
             {/* Profile menu */}
             {localStorage.getItem("token") && (
               <ProfileMenu

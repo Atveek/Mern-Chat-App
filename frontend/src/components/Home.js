@@ -52,7 +52,7 @@ const Home = () => {
       <Flex direction="column" align="center" justify="center" minH="80vh">
         <Box textAlign="center">
           <Text fontSize={"7xl"} fontWeight={"bold"} fontFamily={"Work sans"}>
-            Conversa
+            Chatter-Space
           </Text>
           <Text fontSize="xl" fontWeight="bold" mb={4}>
             Online Chatting App
@@ -70,16 +70,11 @@ const Home = () => {
         fontSize="sm"
         position={"fixed"}
         bottom={2}
-        left={"calc(50% - 155px)"}
+        left={"calc(50% - 50px)"}
         mt={4}
         textAlign="center"
       >
-        &copy; 2024 Conversa. All rights reserved.
-        <Link to="https://github.com/pankil-soni" target="_blank">
-          <Text as="u" color="purple.500" ml={1}>
-            Pankil Soni
-          </Text>
-        </Link>
+        &copy; 2024 Chatter-Space.
       </Text>
       {/* Modal for Login/Signup */}
       <Modal

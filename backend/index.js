@@ -2,18 +2,19 @@ const express = require("express");
 const connectDB = require("./db.js");
 const cors = require("cors");
 const http = require("http");
-const PORT = 5000;
+const PORT = 8080;
+const router = require("./Routes/auth_routes.js");
 
 const app = express();
 app.use(cors());
-app.use(express.urlencoded({ extended: true, limit: "50mb" }));
-app.use(express.json({ limit: "50mb" }));
+app.use(express.urlencoded({ extended: true}));
+app.use(express.json());
 
 // Routes
 app.get("/", (req, res) => {
   res.send("Hello World");
 });
-app.use("/user", require("./Routes/auth_routes.js"));
+app.use("/user", router);
 app.use("/message", require("./Routes/message_routes.js"));
 app.use("/conversation", require("./Routes/conversation_routes.js"));
 

@@ -75,7 +75,6 @@ const allMessage = async (req, res) => {
       }
     });
 
-
     res.json(messages);
   } catch (error) {
     console.error(error.message);
@@ -87,7 +86,6 @@ const deletemesage = async (req, res) => {
   const msgid = req.body.messageid;
   const userids = req.body.userids;
   try {
-
     const message = await Message.findById(msgid);
 
     userids.forEach(async (userid) => {
