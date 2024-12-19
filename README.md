@@ -7,12 +7,11 @@ A full-stack MERN (MongoDB, Express.js, React.js, Node.js) chat application with
 NOTE!!! if you want to use the given website please wait for 1 minute after logging in for the first time for the backend server to get restarted as it is a free server.
 
 Guest User login accounts:
+
 ```
 username : guestuser1@gmail.com, guestuser2@gmail.com
 password: 1234guest
 ```
-
-
 
 ## Table of Contents
 
@@ -29,72 +28,86 @@ password: 1234guest
 ## Features
 
 ### Dark/Light Mode and Responsive Website
+
 - Users can switch between dark and light themes for better readability and responsive website for dekstop and mobile.
 
 ![Dark and Light Mode](screenshots/1_home.png)
 
 ### Authentication
+
 - Users can sign up, log in, and upload profile photos.
 - Forgot password functionality is also available with OTP verification.
 
 ![Authentication](screenshots/2_login_signup.png)
 
 ### Responsive Dashboard
+
 - Different UI of dashboard for desktop and phone.
 
 ![Chatting](screenshots/3_dashboard.png)
 
 ### New Chat
+
 - Chatting with new users.
 
 ![Chatting](screenshots/4_newchat.png)
 
 ### Smooth Searching
+
 - Search chats for easy access.
 
 ![Chatting](screenshots/5_searching.png)
 
 ### Chatting Area & Real-time Communication
+
 - Users can chat with friends or create new chats with anyone on the app.
 
 ![Chatting](screenshots/6_chatting_area.png)
 
 ### New Message Real-time Notification
+
 - Real-time messaging with notifications ensures seamless communication.
 
 ![Real-time Communication](screenshots/new_message.png)
 
 ### Typing Animation
+
 - Typing animation indicates when another user is typing a message.
 
 ![Typing Animation](screenshots/typing_animation.png)
 
 ### Message Management
+
 - Users can delete messages for themselves or for everyone in the chat.
 
 ![Message Management](screenshots/8_delete_message.png)
 
 ### Active Now Status
+
 - Users can see the active status of their friends.
 
 ![Active Status](screenshots/6_chatting_area.png)
 
 ### Message Seen Status
+
 - Users can see if their messages have been seen by the recipient.
 
 ![Message Seen Status](screenshots/6_chatting_area.png)
 
 ### Personalized Chatbot
+
 - Each user has a personalized chatbot that remembers previous chat contexts.
 
 ![Personalized Chatbot](screenshots/personal_chatbot.png)
 
 ### Image Messages
+
 - Users can send images as messages along with captions.
 
 ![Image Messages](screenshots/7_send_photo.png)
 
 ### Login using Otp
+
 - Login using otp if user forgets the password
 
 ![Image Messages](screenshots/9_login_otp.png)
@@ -122,47 +135,36 @@ password: 1234guest
    ```
    git clone https://github.com/yourusername/mern-chat-app.git
    ```
+
 2. Navigate to the backend folder and frontend folter then install dependencies:
-    ```
-    cd backend
-    npm install
-    ```
-    
-    ```
-    cd frontend
-    npm install
-    ```
-    
+
+   ```
+   cd backend
+   npm install
+   ```
+
+   ```
+   cd frontend
+   npm install
+   ```
+
 3. Create a .env file in the backend folder and add necessary environment variables:
-    ```
-    PORT=5000
-    MONGODB_URI=your_mongodb_uri
-    SECRET_KEY=your_secret_key
-    ```
+   ```
+   PORT=5000
+   MONGODB_URI=your_mongodb_uri
+   SECRET_KEY=your_secret_key
+   ```
 
 ## Usage
+
 1. Start the backend server:
-    ```
-    cd backend
-    nodemon ./index.js
-    ```
+   ```
+   cd backend
+   nodemon ./index.js
+   ```
 2. Start the frontend development server:
-    ```
-    cd frontend
-    npm run start
-    ```
+   ```
+   cd frontend
+   npm run start
+   ```
 3. Open your browser and navigate to http://localhost:3000 to view the application.
-
-## Contributing
-Contributions are welcome! Please open an issue or submit a pull request.
-
-## License
-This project is licensed under the MIT License.
-
-## About the Author 📝
-This project was developed by **Pankil Soni**. Feel free to reach out with any questions or suggestions.
-- gmail - pmsoni2016@gmail.com
-- kaggle - https://www.kaggle.com/pankilsoni
-- LinkedIn - https://www.linkedin.com/in/pankil-soni-5a0541170/
-"# Mern-Chat-App" 
-"# Mern-Chat-App" 
